@@ -1,4 +1,4 @@
-# Logic Gate Calculator
+# LGC - Logic Gate Calculator
 Logic Gate NOR, OR, AND, NOT etc. calculator GUI
 ## Author: github.com/0x0is1
 ## IG: instagram.com/0x0is1
@@ -8,11 +8,12 @@ Logic Gate NOR, OR, AND, NOT etc. calculator GUI
 
 ## Legal disclaimer:
 Particularly great tool for engineers and students.
-![LogicGateCalculator](https://github.com/0x0is1/LogicGateCalculator/blob/master/project1.png)
+![LogicGateCalculator](https://github.com/0x0is1/LGC/blob/master/project1.png)
 
 ### Usage:
 ```
-git clone https://github.com/0x0is1/LogicGateCalculator
+git clone https://github.com/0x0is1/LGC/
+./LogicGateCalculator
 ```
 
 ### Donate!
