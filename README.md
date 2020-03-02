@@ -1,3 +1,4 @@
+[![Build Status](https://app.bitrise.io/app/30bf58cfe9db57f2/status.svg?token=6jDEXEHRQjdlHZfe0pizWg)](https://app.bitrise.io/app/30bf58cfe9db57f2)
 # LGC - Logic Gate Calculator
 Logic Gate NOR, OR, AND, NOT etc. calculator GUI
 ## Author: github.com/0x0is1
