@@ -3,7 +3,6 @@ dist: trusty
 
 os:
   - linux
-  - osx
 
 branches:
   only:
@@ -49,7 +48,7 @@ script:
   - cd .sourceCode
   - qmake -config release && make
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
-          xvfb-run -- LogicGateCalculator --lowquality
+          xvfb-run -- ./LogicGateCalculator --lowquality
         ;
     fi
 
