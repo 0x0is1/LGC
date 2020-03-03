@@ -1,0 +1,75 @@
+language: cpp
+dist: trusty
+
+os:
+  - linux
+  - osx
+
+branches:
+  only:
+    - develop
+    - master
+    - testing
+
+env:
+  matrix:
+    - CONFIG=release
+    #- CONFIG=debug
+
+install:
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+         lsb_release -a
+      && sudo apt-add-repository -y ppa:ubuntu-toolchain-r/test
+      && sudo apt-add-repository -y ppa:beineri/opt-qt562-trusty
+      && sudo apt-get -qq update
+      && sudo apt-get -qq install g++-4.8 libc6-i386 qt56tools qt56svg qt56script
+      && export CXX="g++-4.8"
+      && export CC="gcc-4.8"
+      ;
+    else
+         brew update > /dev/null
+      && brew install qt5
+      && chmod -R 755 /usr/local/opt/qt5/*
+      ;
+    fi
+
+script:
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+         QTDIR="/opt/qt56"
+      && PATH="$QTDIR/bin:$PATH"
+      && qt56-env.sh
+      ;
+    else
+         QTDIR="/usr/local/opt/qt5"
+      && PATH="$QTDIR/bin:$PATH"
+      && LDFLAGS=-L$QTDIR/lib
+      && CPPFLAGS=-I$QTDIR/include
+      ;
+    fi
+  - cd ./tests
+  - qmake DEFINES+=INTEGRATION_TESTS && make -s -j 2
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+           ./../bin/tests/tests -platform minimal -txt
+        && ../coveralls.sh
+        ;
+    else
+         ./../bin/tests/tests.app/Contents/MacOS/tests -platform minimal -txt
+      ;
+    fi
+
+notifications:
+  recipients:
+    - developer@bekerle.com
+  email:
+    on_success: change
+    on_failure: change
+#  irc:
+#    # https://docs.travis-ci.com/user/notifications/#IRC-notification
+#    channels:
+#      - "chat.freenode.net#qownnotes"
+#    template:
+#      - "[%{commit}] %{repository} (%{branch}): %{message} | Commit message: %{commit_message} | Changes: %{compare_url} | Build details: %{build_url}"
+#    on_success: always
+#    on_failure: always
+#    use_notice: true
+#    skip_join: true
