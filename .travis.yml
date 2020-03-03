@@ -46,11 +46,10 @@ script:
       && CPPFLAGS=-I$QTDIR/include
       ;
     fi
-  - cd ./tests
-  - qmake DEFINES+=INTEGRATION_TESTS && make -s -j 2
+  - cd .sourceCode
+  - qmake -config release && make
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
-           ./../bin/tests/tests -platform minimal -txt
-        && ../coveralls.sh
+           ./LogicGateCalculator
         ;
     else
          ./../bin/tests/tests.app/Contents/MacOS/tests -platform minimal -txt
@@ -59,7 +58,7 @@ script:
 
 notifications:
   recipients:
-    - developer@bekerle.com
+    - 0x0is1off@gmail.com
   email:
     on_success: change
     on_failure: change
