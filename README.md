@@ -19,5 +19,6 @@ git clone https://github.com/0x0is1/LGC/
 
 ### **Support authors**:
 
-[![Support](https://lh3.googleusercontent.com/_9FjOMozDEAb4yjO4wznpJ9XAoOfJrP3AzrXy0ESJPA-XnBTbHgxGo_JCZMz9lUgdVSGtcs=s170)](https://www.buymeacoffee.com/6dciIwk)
-[![Support](https://lh3.googleusercontent.com/JGKReF_m6FGDfvHlJSvLEXowGndM-gNq15g28jCulMNhWeBXbGptUXNGguNcMPW3UBzPOw=s170)](https://paypal.me/0x0is1?locale.x=en_GB)
+[![Donate](https://github.com/StrinTH/DrHelp/blob/master/assets/default-pink.png)](https://www.buymeacoffee.com/6dciIwk)
+
+[![Donate](https://github.com/StrinTH/DrHelp/blob/master/assets/-460.png)](https://paypal.me/0x0is1?locale.x=en_GB)
