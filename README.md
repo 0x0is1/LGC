@@ -9,7 +9,7 @@ Logic Gate NOR, OR, AND, NOT etc. calculator GUI
 
 ## Legal disclaimer:
 Particularly great tool for engineers and students.
-![LogicGateCalculator](https://github.com/0x0is1/LGC/blob/master/project1.png)
+![LogicGateCalculator](./project1.png)
 
 ### Usage:
 ```
