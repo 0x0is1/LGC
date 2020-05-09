@@ -16,7 +16,6 @@ Particularly great tool for engineers and students.
 git clone https://github.com/0x0is1/LGC/
 ./LogicGateCalculator
 ```
-
 ### **Support authors**:
 
 [![Donate](./assets/default-pink.png)](https://www.buymeacoffee.com/6dciIwk)
